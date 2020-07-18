@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   overflow: hidden;
+  border: 1px solid rebeccapurple;
 }
 
 .page_left{
@@ -15,7 +16,6 @@
 
 .page_image{
   width: 100%;
-  border-radius: 10rpx 10rpx 0 0;
 }
 
 .page_title{
@@ -25,7 +25,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* background-color: green; */
+
 }
 .page_title_spen{
   color: rgb(116, 187, 187);

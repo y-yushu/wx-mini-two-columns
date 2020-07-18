@@ -1,6 +1,20 @@
-<!-- <view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view> -->
-
 <!-- 瀑布流插件 -->
 <view class="page_1">
-  <yys-waterfallFlow noramalData='{{ images }}' middleGap='5px'></yys-waterfallFlow>
+  <yys-waterfallFlow
+    noramalData='{{ pageData }}'
+    middleGap='{{ middleGap }}'
+    cuSlotHeight1='60'
+    bind:clickDom='test'
+  >
+    <view wx:for="{{ pageInfo }}" wx:for-item="item" wx:for-index='index' slot="slot-{{item.id}}">
+      <view class='page_slot'>
+        <spen>ID:{{ item.id }}</spen>
+        <spen class='zdy-spen'>自定义标题-{{index}}</spen>
+      </view>
+    </view>
+  </yys-waterfallFlow>
+</view>
+
+<view>
+  <button bindtap="addPageInfo">增加数据</button>
 </view>

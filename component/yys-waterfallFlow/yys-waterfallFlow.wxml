@@ -1,24 +1,36 @@
 <!--component/yys-waterfallFlow/yys-waterfallFlow.wxml-->
 <view class="page_index">
   <view class="page_left">
-    <block wx:for="{{ leftList }}">
-      <view>
-        <image class='page_image' style='height:{{item.Height}}px' src='{{item.image}}'></image>
-        <view class='page_title' style='height:{{ waterfallGap }}px'>
-          <spen class='page_title_spen'>这个是标题啊</spen>
+    <block wx:for="{{ leftList }}" wx:for-item="item">
+      <view bind:tap="clickDom" data-data="{{item}}">
+        <image class='page_image class-image class-image-left' style='height:{{item.Height}}px' src='{{item.image}}'></image>
+        <view wx:if="{{item.title}}">
+          <view class='page_title class-title' style='height:{{ item.waterfallGap }}px'>
+            <spen class='page_title_spen'>{{ item.title }}</spen>
+          </view>
+        </view>
+        <view wx:if="{{!item.title}}" class='slot-title'>
+          <slot name="slot-{{ item.id }}"/>
         </view>
       </view>
     </block>
+    <!-- {{ leftHight }} -->
   </view>
   <view style="width: {{ middleGap }};" />
   <view class="page_right">
-    <block wx:for="{{ rightList }}">
-      <view>
-        <image class='page_image' style='height:{{item.Height}}px' src='{{item.image}}'></image>
-        <view class='page_title' style='height:{{ waterfallGap }}px'>
-          <spen class='page_title_spen'>这个是标题啊</spen>
+    <block wx:for="{{ rightList }}" wx:for-item="item">
+      <view bind:tap="clickDom" data-data="{{item}}">
+        <image class='page_image class-image class-image-right' style='height:{{item.Height}}px' src='{{item.image}}'></image>
+        <view wx:if="{{item.title}}">
+          <view class='page_title class-title' style='height:{{ item.waterfallGap }}px'>
+            <spen class='page_title_spen'>{{ item.title }}</spen>
+          </view>
+        </view>
+        <view wx:if="{{!item.title}}" class='slot-title'>
+          <slot name="slot-{{ item.id }}"/>
         </view>
       </view>
     </block>
+    <!-- {{ rightHight }} -->
   </view>
 </view>
