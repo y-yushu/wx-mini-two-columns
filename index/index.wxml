@@ -1,0 +1,6 @@
+<!-- <view class="intro">欢迎使用代码片段，可在控制台查看代码片段的说明和文档</view> -->
+
+<!-- 瀑布流插件 -->
+<view class="page_1">
+  <yys-waterfallFlow noramalData='{{ images }}' middleGap='5px'></yys-waterfallFlow>
+</view>

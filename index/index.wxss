@@ -1,0 +1,8 @@
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.page_1{
+  width: 100%;
+  background-color: #F1FAFA;
+}
